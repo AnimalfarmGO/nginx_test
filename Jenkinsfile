@@ -9,7 +9,7 @@ pipeline {
                     args '-d -p 8088:80 --name web -v index.html:/usr/share/nginx/html nginx'                }
             }
             steps {
-                sh 'curl localhost:8080'
+                sh 'ls'
             }
         }
     }
