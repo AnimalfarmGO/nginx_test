@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'curl localhost'
+                sh 'curl localhost:9889'
             }
         }
     }
