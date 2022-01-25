@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh ' docker run -it -d -p 9889:80 --name web -v ~/site-content:/usr/share/nginx/html nginx'
+                sh ' docker run -it -d -p 9889:80 --name web -v $WORKSPACE/site-content:/usr/share/nginx/html nginx'
             }
         }
         stage('Test Web Page') {
