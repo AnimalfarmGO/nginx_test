@@ -12,7 +12,7 @@ pipeline {
             }
             steps {
                 sh 'ls'
-                sh "curl  localhost:9889"
+                sh "curl  localhost"
             }
         }
         //stage("Test") {
