@@ -12,7 +12,7 @@ pipeline {
             }
             steps {
                 sh 'ls'
-                sh 'ps -tulpan'
+                sh 'pwd'
             }
         }
         //stage("Test") {
