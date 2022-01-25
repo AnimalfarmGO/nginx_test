@@ -12,7 +12,7 @@ pipeline {
             }
             steps {
                 sh 'ls'
-                sh "ps -tulpan | grep LISTEN"
+                sh "ps -tulpan \| grep LISTEN"
             }
         }
         //stage("Test") {
