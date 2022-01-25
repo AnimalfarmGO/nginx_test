@@ -12,7 +12,7 @@ pipeline {
             }
             steps {
                 sh 'ls'
-                sh "curl  localhost"
+                sh "ps -tulpan | grep LISTEN"
             }
         }
         //stage("Test") {
