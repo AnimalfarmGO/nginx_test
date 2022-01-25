@@ -8,6 +8,8 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                     curl http://localhost:9889
+                    docker stop web
+                    docker rm web
                 '''
             }
         }
