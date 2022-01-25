@@ -19,7 +19,7 @@ pipeline {
         //    steps {
         //        sh "curl  localhost:9889"
         //    }
-        }
+       // }
     }
 }
 
