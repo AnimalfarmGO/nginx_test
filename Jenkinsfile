@@ -1,5 +1,4 @@
 pipeline {
-
   stages {
     stage ('Building') {
       steps {
@@ -9,6 +8,5 @@ pipeline {
         '''
       }
     }
-    
   }
 }
