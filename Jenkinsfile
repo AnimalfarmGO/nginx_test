@@ -13,6 +13,8 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'pwd'
+                sh 'hostname'
+                sh "curl  localhost:9889"
             }
         }
         //stage("Test") {
