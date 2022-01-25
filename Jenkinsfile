@@ -1,31 +1,13 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:16.13.1-alpine' }
+    }
     stages {
-        stage('Build') {
-            agent {
-                docker {
-                    image 'nginx:latest'
-                    // Run the container on the node specified at the top-level of the Pipeline, in the same workspace, rather than on a new node entirely:
-                    // args '-d -it --entrypoint=/bin/sh -p 8088:80 --name web -v index.html:/usr/share/nginx/html'
-                    args '-p 9889:80' // -v  index.html:/usr/share/nginx/html'
-                    reuseNode true
-                }
-            }
+        stage('Test') {
             steps {
-                sh 'ls'
-                sh 'pwd'
-                sh 'hostname'
-                sh 'curl yahoo.com'
-                //sh "curl -X POST http://localhost:8080"
-                sh "curl  http://localhost:9889"
-                sleep 300
+                sh 'node --version'
             }
         }
-        //stage("Test") {
-        //    steps {
-        //        sh "curl  localhost:9889"
-        //    }
-       // }
     }
 }
 
