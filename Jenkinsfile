@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'ls'
+                sh 'curl localhost:9889'
             }
         }
     }
