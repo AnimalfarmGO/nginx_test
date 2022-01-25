@@ -14,7 +14,7 @@ pipeline {
                 sh 'ls'
                 sh 'pwd'
                 sh 'hostname'
-                sh "curl  localhost"
+                sh "curl  localhost:8080"
             }
         }
         //stage("Test") {
