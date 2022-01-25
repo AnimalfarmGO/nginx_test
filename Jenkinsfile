@@ -12,6 +12,7 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                     curl http://localhost:9889
+                    curl --write-out '%{http_code}' --silent --output /dev/null http://localhost:9889
                     docker stop web
                     docker rm web
                 '''
