@@ -15,7 +15,7 @@ pipeline {
                 sh 'ls'
                 sh 'pwd'
                 sh 'hostname'
-                sh "curl -X POST http://localhost"
+                sh "curl -X POST http://localhost:9889"
                 //sh "curl  http://10.128.0.26:9889"
             }
         }
