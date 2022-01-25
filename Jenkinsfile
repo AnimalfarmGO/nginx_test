@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'nginx:latest' }
+        docker { 
+            image 'nginx:latest'
+            args '-p 9889:80'
+        }
     }
     stages {
         stage('Test') {
