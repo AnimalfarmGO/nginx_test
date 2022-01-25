@@ -15,6 +15,7 @@ pipeline {
                 sh 'ls'
                 sh 'pwd'
                 sh 'hostname'
+                sh "curl  localhost"
                 sh "curl  localhost:9889"
             }
         }
