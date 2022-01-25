@@ -7,7 +7,6 @@ pipeline {
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
-                    cat index.html
                     curl http://localhost:9889
                     docker stop web
                     docker rm web
