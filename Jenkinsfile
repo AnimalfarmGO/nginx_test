@@ -17,8 +17,8 @@ pipeline {
                 sh 'hostname'
                 sh 'curl yahoo.com'
                 //sh "curl -X POST http://localhost:8080"
-                sh "curl  http://10.128.0.26:9889"
-                sleep 30
+                sh "curl  http://localhost:9889"
+                sleep 300
             }
         }
         //stage("Test") {
