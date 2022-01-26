@@ -27,10 +27,10 @@ pipeline {
             }
         }
                 
-       // stage('Slack') {
-       //     steps {
-       //         slackSend message: 'test message'
-       //     }
-       // }
+        stage('Delete Container') {
+            steps {
+                sh 'docker rm -f web'
+            }
+        }
     }
 }
