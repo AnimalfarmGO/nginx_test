@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def response = httpRequest 'http://localhost:9889'
+                    def response = httpRequest 'http://localhost:9888'
                     println("Status: "+response.status)
                   //  println("Content: "+response.content)
                 }
