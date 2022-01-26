@@ -19,10 +19,10 @@ pipeline {
                 '''
             }
         }
-        stage('Slack') {
-            steps {
-                slackSend message: 'test message'
-            }
-        }
+       // stage('Slack') {
+       //     steps {
+       //         slackSend message: 'test message'
+       //     }
+       // }
     }
 }
