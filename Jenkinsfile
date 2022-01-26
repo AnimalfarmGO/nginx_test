@@ -14,11 +14,19 @@ pipeline {
                     pwd
                     curl http://localhost:9889
                     curl -o /dev/null -s -w "%{http_code}" http://localhost:9889
-                    docker stop web
-                    docker rm web
+                  //  docker stop web
+                  //  docker rm web
                 '''
             }
         }
+        stage('Test') {
+            steps {
+                def response = httpRequest 'http://localhost:9889'
+                println("Status: "+response.status)
+                println("Content: "+response.content)
+            }
+        }
+                
        // stage('Slack') {
        //     steps {
        //         slackSend message: 'test message'
