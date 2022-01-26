@@ -13,7 +13,7 @@ pipeline {
                     ls -lah
                     pwd
                     curl http://localhost:9889
-                    curl -o /dev/null -s -w "%{http_code}" http://localhost:9889
+                    curl -o /dev/null -s -w "%{http_code}" http://localhost:9888
                 '''
             }
         }
