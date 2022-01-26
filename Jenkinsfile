@@ -23,7 +23,7 @@ pipeline {
                     def response = httpRequest 'http://localhost:9889'
                     println("Status: "+response.status)
                     //println("Content: "+response.content)
-                    echo -n response.content > checksum.txt
+                    echo -n println(response.content) > checksum.txt
                 }
             }
         }
