@@ -6,26 +6,24 @@ pipeline {
                 sh ' docker run -it -d -p 9889:80 --name web -v $WORKSPACE/site-content:/usr/share/nginx/html nginx'
             }
         }
-/*        stage('Test Web Page') {
+        stage('Test Web Page') {
             steps {
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
                     pwd
-                    curl http://localhost:9889
+                    curl http://localhost:9889 > index.txt
                     curl -o /dev/null -s -w "%{http_code}" http://localhost:9889
                 ''' 
             }
-        } */
+        } 
         stage('Test') {
             steps {
                 script {
                     def response = httpRequest 'http://localhost:9889'
                     println("Status: "+response.status)
                     //println("Content: "+response.content)
-                    def content = println(response.content)
-                    echo ${content}
-                }
+                    }
             }
         }
                 
