@@ -9,11 +9,10 @@ pipeline {
         stage('Test Web Page') {
             steps {
                 sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                    pwd
                     curl http://localhost:9889 > index.txt
-                    curl -o /dev/null -s -w "%{http_code}" http://localhost:9889
+                    md5sum index.txt intex.html > hashes.txt
+                    md5sum --check hashes.txt
+  //                  curl -o /dev/null -s -w "%{http_code}" http://localhost:9889
                 ''' 
             }
         } 
