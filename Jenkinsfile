@@ -23,7 +23,8 @@ pipeline {
                     def response = httpRequest 'http://localhost:9889'
                     println("Status: "+response.status)
                     //println("Content: "+response.content)
-                    println(response.content)
+                    def content = println(response.content)
+                    echo $content
                 }
             }
         }
