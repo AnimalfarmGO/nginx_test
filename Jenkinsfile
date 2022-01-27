@@ -10,9 +10,7 @@ pipeline {
             steps {
                 sh '''
                     curl http://localhost:9889 > index.txt
-                    ls 
-                    ls site-content
-                    md5sum index.txt site-content/intex.html > hashes.txt
+                    md5sum index.txt site-content/index.html > hashes.txt
                     md5sum --check hashes.txt
                     ls 
                     ls site-content
