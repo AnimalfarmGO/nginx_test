@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh '''
                     curl http://localhost:9889 > index.txt
-                    md5sum index.txt intex.html > hashes.txt
+                    md5sum index.txt site-content/intex.html > hashes.txt
                     md5sum --check hashes.txt
   //                  curl -o /dev/null -s -w "%{http_code}" http://localhost:9889
                 ''' 
