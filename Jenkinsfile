@@ -24,7 +24,7 @@ pipeline {
                     println("Status: "+response.status)
                     //println("Content: "+response.content)
                     def content = println(response.content)
-                    echo $content
+                    echo ${content}
                 }
             }
         }
