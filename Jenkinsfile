@@ -6,6 +6,15 @@ pipeline {
                 sh ' docker run -it -d -p 9889:80 --name web -v $WORKSPACE/site-content:/usr/share/nginx/html nginx'
             }
         }
+        stage('Test HTTP Return Code') {
+            steps {
+                script {
+                    def response = httpRequest 'http://localhost:9889'
+                    println("Status: "+response.status)
+                    //println("Content: "+response.content)
+                    }
+            }
+        }
         stage('Test Web Page') {
             steps {
                 sh '''
@@ -18,15 +27,6 @@ pipeline {
                 ''' 
             }
         } 
-        stage('Test') {
-            steps {
-                script {
-                    def response = httpRequest 'http://localhost:9889'
-                    println("Status: "+response.status)
-                    //println("Content: "+response.content)
-                    }
-            }
-        }
                 
         stage('Delete Container') {
             steps {
