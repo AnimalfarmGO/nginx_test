@@ -8,11 +8,10 @@ pipeline {
         }
         stage('Test HTTP Return Code') {
             steps {
-                script {
-                    def response = httpRequest 'http://localhost:9889'
-                    println("Status: "+response.status)
-                    //println("Content: "+response.content)
-                    }
+                sh '''
+                response=$(curl --write-out '%{http_code}' --silent --output /dev/null servername)
+                [[ $response == 200 ]] && echo 'page is available' || return 1
+                '''
             }
         }
         stage('Test Web Page') {
